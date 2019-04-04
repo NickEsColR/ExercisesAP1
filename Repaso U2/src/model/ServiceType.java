@@ -15,23 +15,26 @@ public class ServiceType{
 	public static final String HAIR_CUT = "corte de cabello";
 	public static final String MANICURE = "Manicure";
 	public static final String PEDICURE = "Pedicure";
+	public static final double GIFT = 1.13;
+	
 	
 	//Attributes
 	
 	private String name;
 	private int realization;
-	private int earning;
+	private double earning;
 	private double earningIva;
 	
 	//methods
 	
 	//init
 	
-	public ServiceType(String name, int realization, int earning){
+	public ServiceType(String name, int realization, double earning){
 		this.name = name;
 		this.realization = realization;
 		this.earning = earning;
 		setEarningIva();
+		addGift();
 	}
 	
 	public void setName(String name){
@@ -42,7 +45,7 @@ public class ServiceType{
 		this.realization = realization;
 	}
 	
-	public void setEarning(int earning){
+	public void setEarning(double earning){
 		this.earning = earning;
 	}
 	
@@ -58,7 +61,7 @@ public class ServiceType{
 		return realization;
 	}
 	
-	public int getEarning(){
+	public double getEarning(){
 		return earning;
 	}
 	
@@ -66,4 +69,7 @@ public class ServiceType{
 		return earningIva;
 	}
 	
+	public void addGift(){
+		earning *= GIFT; 
+	}
 }

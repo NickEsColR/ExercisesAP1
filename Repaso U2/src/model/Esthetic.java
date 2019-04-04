@@ -47,6 +47,8 @@ public class Esthetic{
 		return ave;
 	}
 	
+	//make report for employ 1
+	
 	public String reportPedicureEmploy1(){
 		String msj = "";
 		int realization = 0;
@@ -95,6 +97,8 @@ public class Esthetic{
 		return msj;
 	}
 	
+	//make report for employ 2
+	
 	public String reportPedicureEmploy2(){
 		String msj = "";
 		int realization = 0;
@@ -142,4 +146,51 @@ public class Esthetic{
 		}
 		return msj;
 	}
+	 
+	 //find a service from a employ
+	 
+	 public int findService(int pos, String name){
+		 int service = 0;
+		 switch(pos){
+			 case 1:
+			 if(employ1.getSt1() != null){
+				if(employ1.getSt1().getName().equals(name))
+					service = 1;
+			 }
+			 else if(employ1.getSt2() != null){
+				if(employ1.getSt2().getName().equals(name))
+				 service = 2;
+			 }
+			 else if(employ1.getSt3() != null){
+				if(employ1.getSt2().getName().equals(name))
+				 service = 3;
+ 
+			 }
+			 break;
+			 case 2:
+			 if(employ2.getSt1() != null){
+			 if(employ2.getSt1().getName().equals(name))
+				 service = 1;
+			 }
+			 else if(employ2.getSt2() != null){
+				if(employ2.getSt2().getName().equals(name))
+				 service = 2;
+			 }
+			 else if(employ2.getSt3() != null){
+				if(employ2.getSt2().getName().equals(name))
+				 service = 3;
+ 
+			 }
+			 break;
+		 }
+			
+		 return service;
+	 }
+	 
+	 //see winning for an employ
+	 
+	 public double calculateWinnig(int pos){
+		 double ave = pos == 1 ? employ1.calculateWinnig() : employ2.calculateWinnig();
+		 return ave;
+	 }
 }

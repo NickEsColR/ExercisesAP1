@@ -14,6 +14,7 @@ public class Employ{
 	public static final double HAIR_CUT_PERCENTAGE = 0.20;
 	public static final double MANICURE_PERCENTAGE = 0.35;
 	public static final double PEDICURE_PERCENTAGE = 0.25;
+	public static final double FOR_EMPLOY = 0.05;
 	
 	//Attributes
 	
@@ -130,7 +131,7 @@ public class Employ{
 			win += st3.getEarning() * PEDICURE_PERCENTAGE;
 			}
 		}
-		
+		win = win + (win*FOR_EMPLOY); 
 		return win;
 	}
 	
@@ -176,10 +177,12 @@ public class Employ{
 	
 	public double calculateEarningAverange(){
 		double ave = st1.getEarning();
-		if(st2 != null)
+		if(st2 != null){
 			ave += st2.getEarning();
-		if(st3 != null)
+		}
+		if(st3 != null){
 			ave += st3.getEarning();
+		}
 		return ave;
 	}
 	
