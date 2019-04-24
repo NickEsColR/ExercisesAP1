@@ -74,7 +74,7 @@ public class SeaPort{
 	
 	/**
 	* get the containers that are leaving<br>
-	* @return output as ArrayList<Container>. output are the containers that are leaving<br>
+	* @return output as ArrayList of Container . output are the containers that are leaving<br>
 	*/
 	
 	public ArrayList<Container> getOutputContainer(){
