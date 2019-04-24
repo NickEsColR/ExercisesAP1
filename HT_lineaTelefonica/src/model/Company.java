@@ -38,14 +38,37 @@ public class Company{
 	
 	/**
 	* add a new phone<br>
-	*  @param madeCalls is how many calls the line do <br>
+	* @param madeCalls is how many calls the line do <br>
 	* @param localMinutes is the duration of all calls to a local call <br>
 	* @param phoneMinutes is the duration of all calls to a phone call<br>
 	* @param ldm is the the duration of all calls to a long distance call<br>
+	* @param type is the type of telephony line<br>
 	*/
 	
-	public void addPhones(int madeCalls, double localMinutes, double phoneMinutes, double ldm){
-		// phones.add(); // no se como hacerlo, polimorfismo
+	public void addPhones(int madeCalls, double localMinutes, double phoneMinutes, double ldm, int type){
+		switch(type){
+			case 1: 
+				phones.add(new Local(madeCalls, localMinutes));
+			break;
+			case 2:
+				phones.add(new Phone(madeCalls, localMinutes, phoneMinutes));
+			break;
+			case 3: 
+				phones.add(new VozIP(madeCalls, localMinutes, phoneMinutes, ldm));
+			break;
+		}
 	}
 	
+	/**
+	* calculate the cost of all telephony lines<br>
+	* @return cost is the cost of all telephony lines<br>
+	*/
+	
+	public double calculateCost(){
+		double cost = 0;
+		for(int i = 0; i < phones.size();i++){
+			cost += phones.get(i).setCost();
+		}
+		return cost;
+	}
 }
