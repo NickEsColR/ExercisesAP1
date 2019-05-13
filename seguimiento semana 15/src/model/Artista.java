@@ -38,7 +38,7 @@ public class Artista extends Cliente{
 		costoPorEvento = costoE;
 	}
 	
-	public double calcularIngresoProfesional(){
+	public double calcularIngresosProfesional(){
 		return numEventos * costoPorEvento;
 	}
 }

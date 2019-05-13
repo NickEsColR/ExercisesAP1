@@ -62,7 +62,7 @@ public class Deportista extends Cliente implements GananciaPublicidad{
 	}
 	
 	public String toString(){
-		msj = super.toString()+" con salario de "+salario+" y un numero de spots de "+spots+"\n";
+		String msj = super.toString()+" con salario de "+salario+" y un numero de spots de "+spots+"\n";
 		return msj;
 	}
 }

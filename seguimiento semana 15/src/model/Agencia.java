@@ -18,8 +18,8 @@ public class Agencia{
 		clientes = new ArrayList<Cliente>();
 	}
 	
-	ArrayList<Clientes> darClientes(){
-		ArrayList<Clientes> c = new ArrayList<Cliente>();
+	ArrayList<Cliente> darClientes(){
+		ArrayList<Cliente> c = new ArrayList<Cliente>();
 		for(int i = 0;i < clientes.size();i++){
 			c.add(clientes.get(i));
 		}
@@ -55,7 +55,7 @@ public class Agencia{
 	String listarSegunNivel(char nivel){
 		String msj = "";
 		for(int i = 0;i < clientes.size();i++){
-			if(clientes.get(i).getClass() .equals(Deportista)){
+			if(clientes.get(i) instanceof Deportista){
 				if(clientes.get(i).darNivel() == nivel){
 					msj += clientes.get(i).toString();
 				}

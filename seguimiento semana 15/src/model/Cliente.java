@@ -58,7 +58,7 @@ public abstract class Cliente{
 	public abstract double calcularIngresosProfesional();
 	
 	public String toString(){
-		msj = "Nombre: "+nombre+" Apellido: "+apellido+" Numero de identificacion "+id;
+		String msj = "Nombre: "+nombre+" Apellido: "+apellido+" Numero de identificacion "+id;
 		return msj;
 	}
 }
