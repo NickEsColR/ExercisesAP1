@@ -17,6 +17,8 @@ public class Planta extends SerVivo implements Simulable, Comestible{
 	}
 	
 	public void accion(ArrayList<SerVivo>){
+		p.modificarCalorias((p.darCalorias() * 50)/100);
+		p.accion(plantas);
 		hacerFotosintesis();
 	}
 	
