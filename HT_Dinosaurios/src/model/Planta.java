@@ -10,19 +10,28 @@ package model;
 
 public class Planta extends SerVivo implements Simulable, Comestible{
 	
+	//attributes
+	
+	private int numFrutas;
+	
 	//methods
 	
-	public Planta(int x, int y, double calories){
+	public Planta(int x, int y, double calories, int frutas){
 		super(x, y, calories);
+		numFrutas = frutas;
 	}
 	
 	public void accion(ArrayList<SerVivo>){
-		p.modificarCalorias((p.darCalorias() * 50)/100);
-		p.accion(plantas);
+		modificarCalorias((darCalorias() * 10)/100);
+		darFrutos();
 		hacerFotosintesis();
 	}
 	
 	public void hacerFotosintesis(){
 		calories += 50; //modificar
+	}
+	
+	public void darFrutos(){
+		numFrutas += 10;
 	}
 }
