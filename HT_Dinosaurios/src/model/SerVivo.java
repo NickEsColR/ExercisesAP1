@@ -50,6 +50,7 @@ public class SerVivo{
 	public void modificarPosX(int x){
 		posX = x;
 	}
+<<<<<<< HEAD
 	
 	public double darCalorias(){
 		return calorias;
@@ -58,4 +59,6 @@ public class SerVivo{
 	public void modificarCalorias(double c){
 		calorias = c;
 	}
+=======
+>>>>>>> 67105e47c1aed192ef369d205d19f9690cbdd016
 }
