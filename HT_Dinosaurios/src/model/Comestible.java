@@ -11,6 +11,6 @@ public interface Comestible{
 
 	//methods
 	
-	public void hacerFotosintesis();
+	public void hacerFotosintesis(double caloriaConstante);
 	
 }

@@ -33,21 +33,21 @@ public class ModeloSimulacion{
 	}
 	
 	public void activarAccion(){
-		ArrayList<SerVivo> dinos = new ArrayList<SerVivo>();
+		ArrayList<Dinosaurio> dinos = new ArrayList<Dinosaurio>();
 		ArrayList<SerVivo> plantas = new ArrayList<SerVivo>();
-		for (i = 0;i < seresSimulacion.size();i++){
-			if(seresSimulacion.get(i) instanceof(Dinosaurio)){
-				dinos.add(seresSimulacion.get(i));
+		for (int i = 0;i < seresSimulacion.size();i++){
+			if(seresSimulacion.get(i) instanceof Dinosaurio){
+				dinos.add((Dinosaurio)seresSimulacion.get(i));
 			}
-			else if(seresSimulacion.get(i) instanceof(Planta)){
+			else if(seresSimulacion.get(i) instanceof Planta){
 				plantas.add(seresSimulacion.get(i));
 			}
 		}
 		for(int j = 0;j < dinos.size();j++){
 			dinos.get(j).accion(plantas);
-		}
+		}	
 		for(int k = 0;k < plantas.size();k++){
-			plantas.get(k).accion(plantas)
+			(Planta)plantas.get(k).accion(plantas);
 		}
 	}
 }

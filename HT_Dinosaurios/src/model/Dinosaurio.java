@@ -7,6 +7,7 @@ package model;
 * HOJA DE TRABAJO DINOSAURIOS
 */
 
+import java.util.ArrayList;
 
 public class Dinosaurio extends SerVivo implements Simulable, Alimentable{
 	
@@ -29,8 +30,8 @@ public class Dinosaurio extends SerVivo implements Simulable, Alimentable{
 	public void accion(ArrayList<SerVivo> plantas){
 		Comestible p = null;
 		for(int i = 0;i < plantas.size();i++){
-			p = (Comestible)plantas.get(i);
-			if(distancia(darPosX(),darPosY(),p.darPosX(),p.darPosY()) == 1){
+			if(distancia(darPosX(),darPosY(),plantas.get(i).darPosX(),plantas.get(i).darPosY()) == 1){
+				p = (Comestible)plantas.get(i);
 				comer(p);
 			}
 			
@@ -38,8 +39,9 @@ public class Dinosaurio extends SerVivo implements Simulable, Alimentable{
 	}
 	
 	public void comer(Comestible planta){
-		calorias -= (calorias * 10)/100;
-		calorias += p.darCalorias();
+		Planta p = (Planta)planta;
+		modificarCalorias(darCalorias() * 0.1);
+		modificarCalorias( p.darCalorias()) ;
 	}
 	
 	public int distancia(int posXD,int posYD,int posXP, int posYP){

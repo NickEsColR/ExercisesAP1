@@ -51,11 +51,19 @@ public class SerVivo{
 		posX = x;
 	}
 	
+	public int darPosY(){
+		return posY;
+	}
+	
+	public void modificarPosY(int y){
+		posY = y;
+	}
+	
 	public double darCalorias(){
-		return calorias;
+		return calories;
 	}
 	
 	public void modificarCalorias(double c){
-		calorias = c;
+		calories = c;
 	}
 }

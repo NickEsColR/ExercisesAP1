@@ -7,9 +7,11 @@ package model;
 * HOJA DE TRABAJO DINOSAURIOS
 */
 
+import java.util.ArrayList;
+
 public interface Simulable{
 
 	//methods
 	
-	public void accion(ArrayList<SerVivo>);
+	public void accion(ArrayList<SerVivo> plantas);
 }

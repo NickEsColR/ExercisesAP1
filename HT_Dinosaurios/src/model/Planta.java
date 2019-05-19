@@ -7,6 +7,7 @@ package model;
 * HOJA DE TRABAJO DINOSAURIOS
 */
 
+import java.util.ArrayList;
 
 public class Planta extends SerVivo implements Simulable, Comestible{
 	
@@ -22,14 +23,14 @@ public class Planta extends SerVivo implements Simulable, Comestible{
 	}
 	
 	public void accion(ArrayList<SerVivo> p){
-		int caloriaConstante = darCalorias();
+		double caloriaConstante = darCalorias();
 		modificarCalorias((darCalorias() * 10)/100);
 		darFrutos();
 		hacerFotosintesis(caloriaConstante);
 	}
 	
-	public void hacerFotosintesis(int caloriaConstante){
-		calories = caloriaConstante; 
+	public void hacerFotosintesis(double caloriaConstante){
+		modificarCalorias( caloriaConstante); 
 	}
 	
 	public void darFrutos(){
