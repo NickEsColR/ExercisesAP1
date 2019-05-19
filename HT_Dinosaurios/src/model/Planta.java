@@ -21,14 +21,15 @@ public class Planta extends SerVivo implements Simulable, Comestible{
 		numFrutas = frutas;
 	}
 	
-	public void accion(ArrayList<SerVivo>){
+	public void accion(ArrayList<SerVivo> p){
+		int caloriaConstante = darCalorias();
 		modificarCalorias((darCalorias() * 10)/100);
 		darFrutos();
-		hacerFotosintesis();
+		hacerFotosintesis(caloriaConstante);
 	}
 	
-	public void hacerFotosintesis(){
-		calories += 50; //modificar
+	public void hacerFotosintesis(int caloriaConstante){
+		calories = caloriaConstante; 
 	}
 	
 	public void darFrutos(){
